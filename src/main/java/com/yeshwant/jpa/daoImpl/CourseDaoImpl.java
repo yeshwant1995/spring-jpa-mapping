@@ -1,5 +1,7 @@
 package com.yeshwant.jpa.daoImpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -27,6 +29,12 @@ public class CourseDaoImpl implements CourseDao {
 		Course getFetchedCourse = courseRepository.getReferenceById(id);
 		
 		return getFetchedCourse;
+	}
+
+	@Override
+	public List<Course> findAllCourse() {
+		
+		return courseRepository.findAll();
 	}
 
 }
